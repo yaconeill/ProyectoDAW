@@ -4,4 +4,5 @@ function start(){
 
 $(function(){
   start();
-})
+  checkCookie();
+});

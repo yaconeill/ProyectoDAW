@@ -20,6 +20,7 @@ class IndexComponent extends React.Component {
             <FooterComponent/>
           </div>
         </div>
+        <CookiePolicyComponent/>        
       </div>
     );
   }
