@@ -5,4 +5,5 @@ function start(){
 $(function(){
   start();
   checkCookie();
+  uploadFile();
 });

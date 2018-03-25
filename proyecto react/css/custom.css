@@ -35,9 +35,10 @@
     color: #faff00;
 }
 
-.imgSample {
-    width: 100px;
-    height: 100px;
+.imgSample img {
+    margin-top: 1em;
+    width: 15rem;
+    /* height: 100px; */
 }
 
 .show{

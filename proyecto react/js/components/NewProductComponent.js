@@ -11,7 +11,7 @@ class NewProductComponent extends React.Component {
             {/* Page Header */}
             <header className="page-header">
               <div className="container-fluid">
-                <h2 className="no-margin-bottom">Panel de control</h2>
+                <h2 className="no-margin-bottom">Nuevo producto</h2>
               </div>
             </header>
             {/* Content  */}
