@@ -9,11 +9,11 @@ class ContentComponent extends React.Component {
                             <div className="col-xl-3 col-sm-6">
                                 <div className="item d-flex align-items-center">
                                     <div className="icon bg-violet">
-                                        <i className="icon-user"></i>
+                                        <i className="fa fa-cutlery"></i>
                                     </div>
                                     <div className="title">
-                                        <span>New
-                                            <br/>Clients</span>
+                                        <span>Tipos de
+                                            <br/>bocadillos</span>
                                         <div className="progress">
                                             <div
                                                 role="progressbar"
@@ -33,11 +33,11 @@ class ContentComponent extends React.Component {
                             <div className="col-xl-3 col-sm-6">
                                 <div className="item d-flex align-items-center">
                                     <div className="icon bg-red">
-                                        <i className="icon-padnote"></i>
+                                        <i className="fa fa-cutlery"></i>
                                     </div>
                                     <div className="title">
-                                        <span>Work
-                                            <br/>Orders</span>
+                                        <span>Tipos de
+                                            <br/>sandwiches</span>
                                         <div className="progress">
                                             <div
                                                 role="progressbar"
@@ -57,11 +57,11 @@ class ContentComponent extends React.Component {
                             <div className="col-xl-3 col-sm-6">
                                 <div className="item d-flex align-items-center">
                                     <div className="icon bg-green">
-                                        <i className="icon-bill"></i>
+                                        <i className="fa fa-coffee"></i>
                                     </div>
                                     <div className="title">
-                                        <span>New
-                                            <br/>Invoices</span>
+                                        <span>Tipos de
+                                            <br/>bebidas</span>
                                         <div className="progress">
                                             <div
                                                 role="progressbar"
@@ -81,11 +81,11 @@ class ContentComponent extends React.Component {
                             <div className="col-xl-3 col-sm-6">
                                 <div className="item d-flex align-items-center">
                                     <div className="icon bg-orange">
-                                        <i className="icon-check"></i>
+                                        <i className="fa fa-cutlery"></i>
                                     </div>
                                     <div className="title">
-                                        <span>Open
-                                            <br/>Cases</span>
+                                        <span>Tipos de
+                                            <br/>snakcs</span>
                                         <div className="progress">
                                             <div
                                                 role="progressbar"
