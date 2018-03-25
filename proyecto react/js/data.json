@@ -1,0 +1,308 @@
+{
+    "productos": {
+        "Con pan": {
+            "Bocadillos": {
+                "boc1": {
+                    "name": "Pollo",
+                    "ingredients": [1, 2],
+                    "img": "",
+                    "price": 1
+                },
+                "boc2": {
+                    "name": "Pollo queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "boc3": {
+                    "name": "Pollo con todo",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "boc4": {
+                    "name": "Tortilla",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "boc5": {
+                    "name": "Tortilla queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "boc6": {
+                    "name": "Tortilla con todo",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "boc7": {
+                    "name": "Jamón y queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                }
+            },
+            "Pulguita": {
+                "pul1": {
+                    "name": "Pollo",
+                    "ingredients": [1, 2],
+                    "img": "",
+                    "price": 1
+                },
+                "pul2": {
+                    "name": "Pollo queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "pul3": {
+                    "name": "Pollo con todo",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "pul4": {
+                    "name": "Tortilla",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "pul5": {
+                    "name": "Tortilla queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "pul6": {
+                    "name": "Tortilla con todo",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "pul7": {
+                    "name": "Jamón y queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                }
+            },
+            "Sandwiches": {
+                "sand1": {
+                    "name": "Pollo",
+                    "ingredients": [1, 2],
+                    "img": "",
+                    "price": 1
+                },
+                "sand2": {
+                    "name": "Pollo queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "sand3": {
+                    "name": "Pollo con todo",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "sand4": {
+                    "name": "Tortilla",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "sand5": {
+                    "name": "Tortilla queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "sand6": {
+                    "name": "Tortilla con todo",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "sand7": {
+                    "name": "Jamón y queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                }
+            },
+            "Cruasanes": {
+                "cru1": {
+                    "name": "Pollo",
+                    "ingredients": [1, 2],
+                    "img": "",
+                    "price": 1
+                },
+                "cru2": {
+                    "name": "Pollo queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "cru3": {
+                    "name": "Pollo con todo",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "cru4": {
+                    "name": "Tortilla",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "cru5": {
+                    "name": "Tortilla queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "cru6": {
+                    "name": "Tortilla con todo",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                },
+                "cru7": {
+                    "name": "Jamón y queso",
+                    "ingredients": [1, 2, 3, 4],
+                    "img": "",
+                    "price": 1
+                }
+            }
+        },
+        "Bebidas": {
+            "cafes": {
+                "caf1": {
+                    "name": "Cortado natural",
+                    "price": 0.70
+                },
+                "caf2": {
+                    "name": "Cortado largo",
+                    "price": 0.70
+                },
+                "caf3": {
+                    "name": "Cortado leche y leche",
+                    "price": 0.70
+                },
+                "caf4": {
+                    "name": "Barraquito",
+                    "price": 0.70
+                },
+                "caf5": {
+                    "name": "Solo",
+                    "price": 0.70
+                },
+                "caf6": {
+                    "name": "Café con leche",
+                    "price": 0.70
+                }
+            },
+            "Refrescos": {
+                "res1":{
+                    "name": "CocaCola",
+                    "price": 1
+                },
+                "res2":{
+                    "name": "Aquarius",
+                    "price": 1
+                },
+                "res3":{
+                    "name": "Clipper",
+                    "price": 1
+                },
+                "res4":{
+                    "name": "Nestea",
+                    "price": 1.2
+                },
+                "res5":{
+                    "name": "Fanta",
+                    "price": 1.2
+                },
+                "res6":{
+                    "name": "RedBull",
+                    "price": 1
+                },
+                "res7":{
+                    "name": "Monster",
+                    "price": 1
+                },
+                "res8":{
+                    "name": "Agua 1,5L",
+                    "price": 1
+                },
+                "res9":{
+                    "name": "Agua 0,5L",
+                    "price": 0.50
+                }
+            },
+            "Zumos": {
+                "zum1": {
+                    "name": "Frutas",
+                    "price": 1
+                },
+                "zum2": {
+                    "name": "Frutas con leche",
+                    "price": 1
+                },
+                "zum3": {
+                    "name": "Natural",
+                    "price": 1
+                }
+            }
+        },
+        "Frutas": {
+            "fru1" : {
+                "name": "Plátano",
+                "price": 1
+            },
+            "fru2": {
+                "name": "Naranja",
+                "price": 1
+            },
+            "fru3": {
+                "name": "Manzana",
+                "price": 1
+            }
+        },
+        "ingredients": {
+            "0": {
+                "type": "pan",
+                "name": "Normal",
+                "price": 0.20
+            },
+            "1": {
+                "type": "pan",
+                "name": "Centeno",
+                "price": 0.20
+            },
+            "2": {
+                "type": "pan",
+                "name": "Pulguita",
+                "price": 0.20
+            },
+            "3": {
+                "type": "pan",
+                "name": "Molde",
+                "price": 0.20
+            },
+            "4": {
+                "type": "pan",
+                "name": "Cruasán",
+                "price": 0.20
+            },
+            "5": {
+                "type": "chacina",
+                "name": "jamón",
+                "price": 0.20
+            }
+        }
+    }
+}

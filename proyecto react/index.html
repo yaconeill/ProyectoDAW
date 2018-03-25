@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CoffeeApp</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="all,follow">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome CSS-->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <!-- Fontastic Custom icon font-->
+  <link rel="stylesheet" href="css/fontastic.css">
+  <!-- Google fonts - Poppins -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+  <!-- Custom stylesheet - for your changes-->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <!-- Tweaks for older IEs-->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+  <script crossorigin src="js/react.development.js"></script>
+  <script crossorigin src="js/react-dom.development.js"></script>
+  <script crossorigin src="js/JSXTransformer.js"></script>
+  <!-- JavaScript files-->
+  <!-- Components -->
+  <!-- <script src="js/components/ProductComponent.js" type="text/jsx"></script> -->
+  <script src="js/components/ContentComponent.js" type="text/jsx"></script>
+  <script src="js/components/HeaderComponent.js" type="text/jsx"></script>
+  <script src="js/components/FooterComponent.js" type="text/jsx"></script>
+  <script src="js/components/SideNavComponent.js" type="text/jsx"></script>
+  <script src="js/components/IndexComponent.js" type="text/jsx"></script>
+  <!-- Project files -->
+  <script src="js/loaders/IndexLoader.js" type="text/jsx"></script>
+</head>
+
+<body>
+  <div class="page" id="react"></div>
+
+  <!--//BLOQUE COOKIES-->
+  <div id="barraaceptacion">
+    <div class="inner">
+      Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real Decreto-ley
+      13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
+      <a href="javascript:void(0);" class="ok" onclick="PonerCookie();">
+        <b>OK</b>
+      </a> |
+      <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
+    </div>
+  </div>
+
+  <script>
+    function getCookie(c_name) {
+      var c_value = document.cookie;
+      var c_start = c_value.indexOf(" " + c_name + "=");
+      if (c_start == -1) {
+        c_start = c_value.indexOf(c_name + "=");
+      }
+      if (c_start == -1) {
+        c_value = null;
+      } else {
+        c_start = c_value.indexOf("=", c_start) + 1;
+        var c_end = c_value.indexOf(";", c_start);
+        if (c_end == -1) {
+          c_end = c_value.length;
+        }
+        c_value = unescape(c_value.substring(c_start, c_end));
+      }
+      return c_value;
+    }
+
+    function setCookie(c_name, value, exdays) {
+      var exdate = new Date();
+      exdate.setDate(exdate.getDate() + exdays);
+      var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+      document.cookie = c_name + "=" + c_value;
+    }
+
+    if (getCookie('tiendaaviso') != "1") {
+      document.getElementById("barraaceptacion").style.display = "block";
+    }
+
+    function PonerCookie() {
+      setCookie('tiendaaviso', '1', 365);
+      document.getElementById("barraaceptacion").style.display = "none";
+    }
+  </script>
+  <!--//FIN BLOQUE COOKIES-->
+  <!-- JavaScript files-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/popper.js/umd/popper.min.js"> </script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+  <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
+  <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+  <!-- <script src="js/charts-home.js"></script> -->
+  <script src="js/front.js"></script>
+  <!--FireBase link-->
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+</body>
+
+</html>
