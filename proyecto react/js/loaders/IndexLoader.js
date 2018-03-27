@@ -1,5 +1,6 @@
+var dataJson;
 function start(){
-  ReactDOM.render(<IndexComponent/>,document.getElementById('react'));
+  ReactDOM.render(<IndexComponent />,document.getElementById('react'));
 }
 
 $(function(){

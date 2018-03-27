@@ -51,7 +51,7 @@ function existLocalStorage(){
 
 
 //Guardado
-function saveObjectLocalSotrage(object, id){
+function saveObjectLocalStorage(object, id){
 	var saveItem = JSON.stringify(object);
 	localStorage.setItem(id,saveItem);
 }

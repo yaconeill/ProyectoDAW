@@ -1,49 +1,47 @@
-{
+[{
     "productos": {
-        "Con pan": {
-            "Bocadillos": {
-                "boc1": {
-                    "name": "Pollo",
-                    "ingredients": [0, 8],
-                    "img": "",
-                    "price": 1
-                },
-                "boc2": {
-                    "name": "Pollo queso",
-                    "ingredients": [0, 6, 8],
-                    "img": "",
-                    "price": 1
-                },
-                "boc3": {
-                    "name": "Pollo con todo",
-                    "ingredients": [0, 6, 8, 10],
-                    "img": "",
-                    "price": 1
-                },
-                "boc4": {
-                    "name": "Tortilla",
-                    "ingredients": [0, 10],
-                    "img": "",
-                    "price": 1
-                },
-                "boc5": {
-                    "name": "Tortilla queso",
-                    "ingredients": [0, 6, 10],
-                    "img": "",
-                    "price": 1
-                },
-                "boc6": {
-                    "name": "Tortilla con todo",
-                    "ingredients": [0, 6, 9, 10],
-                    "img": "",
-                    "price": 1
-                },
-                "boc7": {
-                    "name": "Jamón y queso",
-                    "ingredients": [0, 5, 6],
-                    "img": "",
-                    "price": 1
-                }
+        "Bocadillos": {
+            "boc1": {
+                "name": "Pollo",
+                "ingredients": [0, 8],
+                "img": "",
+                "price": 1
+            },
+            "boc2": {
+                "name": "Pollo queso",
+                "ingredients": [0, 6, 8],
+                "img": "",
+                "price": 1
+            },
+            "boc3": {
+                "name": "Pollo con todo",
+                "ingredients": [0, 6, 8, 10],
+                "img": "",
+                "price": 1
+            },
+            "boc4": {
+                "name": "Tortilla",
+                "ingredients": [0, 10],
+                "img": "",
+                "price": 1
+            },
+            "boc5": {
+                "name": "Tortilla queso",
+                "ingredients": [0, 6, 10],
+                "img": "",
+                "price": 1
+            },
+            "boc6": {
+                "name": "Tortilla con todo",
+                "ingredients": [0, 6, 9, 10],
+                "img": "",
+                "price": 1
+            },
+            "boc7": {
+                "name": "Jamón y queso",
+                "ingredients": [0, 5, 6],
+                "img": "",
+                "price": 1
             },
             "Pulguita": {
                 "pul1": {
@@ -272,7 +270,7 @@
                 "price": 1
             }
         },
-        "ingredients": {
+        "ingredientes": {
             "0": {
                 "type": "pan",
                 "name": "Normal",
@@ -330,4 +328,4 @@
             }
         }
     }
-}
+}]

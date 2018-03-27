@@ -18,20 +18,20 @@ class SideNavComponent extends React.Component {
             <p>Administrador</p>
           </div>
         </div>
-        {/* Sidebar Navidation Menus */}
+        {/* Sidebar Navigation Menus */}
         <span className="heading">Principal</span>
         <ul className="list-unstyled">
-          <li className="active">
+          <li className={this.props.home}>
             <a href="index.html">
               <i className="icon-home"></i>Inicio
             </a>
           </li>
-          <li>
+          <li className={this.props.newProduct}>
             <a href="newProduct.html">
               <i className="fa fa-plus"></i>Nuevo producto
             </a>
           </li>
-          <li>
+          <li className={this.props.active}>
             <a href="tables.html">
               <i className="icon-grid"></i>Tablas
             </a>
@@ -41,7 +41,7 @@ class SideNavComponent extends React.Component {
               <i className="fa fa-bar-chart"></i>Estadísticas
             </a>
           </li>
-          <li>
+          <li className={this.props.active}>
             <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse">
               <i className="icon-interface-windows"></i>Example dropdown
             </a>

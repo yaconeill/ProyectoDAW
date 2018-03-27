@@ -6,7 +6,7 @@ class NewProductComponent extends React.Component {
         <HeaderComponent/>
         <div className="page-content d-flex align-items-stretch">
           {/* Side Navbar */}
-          <SideNavComponent/>
+          <SideNavComponent newProduct="active"/>
           <div className="content-inner">
             {/* Page Header */}
             <header className="page-header">

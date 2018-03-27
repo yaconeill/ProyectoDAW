@@ -6,7 +6,7 @@ class IndexComponent extends React.Component {
         <HeaderComponent/>
         <div className="page-content d-flex align-items-stretch">
           {/* Side Navbar */}
-          <SideNavComponent/>
+          <SideNavComponent home="active"/>
           <div className="content-inner">
             {/* Page Header */}
             <header className="page-header">

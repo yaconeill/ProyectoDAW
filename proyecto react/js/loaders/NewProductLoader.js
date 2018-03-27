@@ -3,6 +3,7 @@ function start(){
 }
 
 $(function(){
+  loadData();  
   start();
   checkCookie();
   uploadFile();
