@@ -3,15 +3,36 @@ class AddProductComponent extends React.Component {
     super(props);
     this.state = {
       productList: JSON.parse(localStorage.getItem('productos')),
+      value: '?',
+      show: false,
     };
-    // const types = Object.keys(this.state.productList.productos);
   }
   render() {
     var types = Object.keys(this.state.productList.productos),
-    MakeType = (type) => {
-    return <option key={type} value={type}>{type}</option>;
-    };
-    
+      MakeType = (type) => { return <option key={type} value={type}>{type}</option>; },
+      productsKey = '', ShowProduct = '', showIngredientes = '',
+      ingredientsKey = Object.keys(this.state.productList.ingredientes);
+    if (this.state.value != '?') {
+      productsKey = Object.keys(this.state.productList.productos[this.state.value]),
+        ShowProduct = (p) => { return <option key={p} value={p}>{this.state.productList.productos[this.state.value][p].name}</option> };
+      showIngredientes = (i) => {
+        if(this.state.productList.ingredientes[i].type == 'pan'){
+          return (          
+            <div class="i-checks">
+              <input id={'radio-'+i} type="radio" key={'ing-'+i} value={'ing-'+i} name="a" class="radio-template" />
+              <label htmlFor={'radio-'+i}>{this.state.productList.ingredientes[i].type} - {this.state.productList.ingredientes[i].name}</label>
+            </div>
+          );
+        }
+        else 
+        return (          
+          <div class="i-checks">
+            <input id={'check-'+i} type="checkbox" key={'ing-'+i} value={'ing-'+i} class="checkbox-template" />
+            <label htmlFor={'check-'+i}>{this.state.productList.ingredientes[i].type} - {this.state.productList.ingredientes[i].name}</label>
+          </div>
+        );
+      }
+    }
     return (
       <section className="forms">
         <div className="container-fluid">
@@ -30,10 +51,6 @@ class AddProductComponent extends React.Component {
                           <input id="product-name" type="text" name="product-name" required className="input-material" />
                           <label htmlFor="product-name" className="label-material">Nombre</label>
                         </div>
-                        <div className="form-group-material">
-                          <input id="product-descript" type="text" name="product-descript" required className="input-material" />
-                          <label htmlFor="product-descript" className="label-material">Descripción</label>
-                        </div>
                       </div>
                     </div>
                     <div className="form-group row">
@@ -50,12 +67,16 @@ class AddProductComponent extends React.Component {
                     <div className="form-group row">
                       <label className="col-sm-3 form-control-label">Tipo de producto</label>
                       <div className="col-sm-9 select">
-                        <select name="account" className="form-control">
-                          <option>Seleccionar uno ...</option>                        
+                        <select name="type" className="form-control"
+                          onChange={event => this.setState({ value: event.target.value, show: true })}
+                          value={this.state.value}>
+                          <option>Seleccionar uno ...</option>
                           {types.map(MakeType)}
                         </select>
                       </div>
                     </div>
+                    {<SelectProduct show={this.state.show} productsKey={productsKey} showProduct={ShowProduct} />}
+                    {<ShowIngredients show={this.state.show} ingredientsKey={ingredientsKey} showIngredientes={showIngredientes} />}
                     <div className="form-group row">
                       <label htmlFor="fileInput" className="col-sm-3 form-control-label">Añadir imagen</label>
                       <div className="col-sm-9">
@@ -76,5 +97,45 @@ class AddProductComponent extends React.Component {
         </div>
       </section>
     );
+  }
+}
+class SelectProduct extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    if (this.props.show)
+      return (
+        <div className="form-group row">
+          <label className="col-sm-3 form-control-label">Producto</label>
+          <div className="col-sm-9 select">
+            <select name="product" className="form-control">
+              <option>Seleccionar uno ...</option>
+              {this.props.productsKey.map(this.props.showProduct)}
+            </select>
+          </div>
+        </div>
+      );
+    else
+      return '';
+  }
+}
+
+class ShowIngredients extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    if (this.props.show)
+      return (
+        <div class="form-group row">
+          <label class="col-sm-3 form-control-label">Ingredientes</label>
+          <div class="col-sm-9">
+            {this.props.ingredientsKey.map(this.props.showIngredientes)}
+          </div>
+        </div>
+      );
+    else
+      return '';
   }
 }
