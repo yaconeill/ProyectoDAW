@@ -1,5 +1,5 @@
 class SideNavComponent extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
   render() {
@@ -11,7 +11,7 @@ class SideNavComponent extends React.Component {
             <img
               src="https://raw.githubusercontent.com/Ashwinvalento/cartoon-avatar/master/lib/images/male/45.png"
               alt="..."
-              className="img-fluid rounded-circle"/>
+              className="img-fluid rounded-circle" />
           </div>
           <div className="title">
             <h1 className="h4">Persona a cargo</h1>
@@ -40,6 +40,11 @@ class SideNavComponent extends React.Component {
             <a href="charts.html">
               <i className="fa fa-bar-chart"></i>Estadísticas
             </a>
+          </li>
+          <li>
+            <a href="readQr.html">
+              <i className="fa fa-bar-chart"></i>Lectura de código
+          </a>
           </li>
           <li className={this.props.active}>
             <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse">
