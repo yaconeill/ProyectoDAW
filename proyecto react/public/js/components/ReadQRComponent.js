@@ -35,7 +35,7 @@ class ReadQRComponent extends React.Component {
                         {/* Page Header */}
                         <header className="page-header">
                             <div className="container-fluid">
-                                <h2 className="no-margin-bottom">Nuevo producto</h2>
+                                <h2 className="no-margin-bottom">Pedidos</h2>
                             </div>
                         </header>
                         {/* Content  */}
