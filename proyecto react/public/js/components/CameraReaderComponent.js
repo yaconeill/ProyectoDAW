@@ -256,8 +256,8 @@ class CameraReaderComponent extends React.Component {
                                         <div className="form-group row">
                                             <label className="col-sm-3 form-control-label">Vídeo:</label>
                                             <div className="col-sm-9">
-                                                <button id="scan" className="btn btn-primary mb-2">Iniciar escáner</button>
-                                                <button id="stopScan" className="btn btn-warning mb-2">Cancelar</button>
+                                                <button id="scan" type="button" className="btn btn-primary mb-2">Iniciar escáner</button>
+                                                <button id="stopScan" type="button" className="btn btn-warning mb-2">Cancelar</button>
                                                 <div id="qrCodeScanner"></div>
                                                 <div id="message"></div>
                                             </div>

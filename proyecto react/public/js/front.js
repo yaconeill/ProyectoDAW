@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     'use strict';
-
+    
     // ------------------------------------------------------- //
     // Search Box
     // ------------------------------------------------------ //
@@ -87,7 +87,7 @@ $(document).ready(function () {
     var materialInputs = $('input.input-material');
 
     // activate labels for prefilled values
-    materialInputs.filter(function() { return $(this).val() !== ""; }).siblings('.label-material').addClass('active');
+    materialInputs.filter(function () { return $(this).val() !== ""; }).siblings('.label-material').addClass('active');
 
     // move label on focus
     materialInputs.on('focus', function () {

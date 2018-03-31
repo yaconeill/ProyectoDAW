@@ -31,7 +31,7 @@
   <script crossorigin src="js/react-dom.development.js"></script>
   <script crossorigin src="js/JSXTransformer.js"></script>
   <!-- JavaScript files-->
-  <script src="js/cookiePolicy.js"></script>    
+  <script src="js/cookiePolicy.js"></script>
   <!-- Components -->
   <!-- <script src="js/components/ProductComponent.js" type="text/jsx"></script> -->
   <script src="js/components/ContentComponent.js" type="text/jsx"></script>
@@ -42,11 +42,45 @@
   <script src="js/components/IndexComponent.js" type="text/jsx"></script>
   <!-- Project files -->
   <script src="js/loaders/IndexLoader.js" type="text/jsx"></script>
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/4.12.1/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/4.12.1/firebase-auth.js"></script>
+  <script defer src="/__/firebase/4.12.1/firebase-database.js"></script>
+  <script defer src="/__/firebase/4.12.1/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/4.12.1/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+
 </head>
 
 <body>
 
   <div class="page" id="react"></div>
+  <p id="load">Firebase SDK Loading&hellip;</p>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      // // The Firebase SDK is initialized and available here!
+      //
+      // firebase.auth().onAuthStateChanged(user => { });
+      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+      // firebase.messaging().requestPermission().then(() => { });
+      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+      //
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+      try {
+        let app = firebase.app();
+        let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+        document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+      } catch (e) {
+        console.error(e);
+        document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+      }
+    });
+  </script>
 
   <!-- JavaScript files-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -56,11 +90,23 @@
   <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
   <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
   <!-- <script src="js/charts-home.js"></script> -->
+  <!--FireBase link-->
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAu_P7KYYc4UXKUGQua65IG9PKkXmDzlRQ",
+      authDomain: "coffeeapp-171e9.firebaseapp.com",
+      databaseURL: "https://coffeeapp-171e9.firebaseio.com",
+      projectId: "coffeeapp-171e9",
+      storageBucket: "coffeeapp-171e9.appspot.com",
+      messagingSenderId: "657915681857"
+    };
+    firebase.initializeApp(config);
+  </script>
   <script src="js/front.js"></script>
   <script src="js/data.json"></script>
   <script src="js/app.js"></script>
-  <!--FireBase link-->
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 </body>
 
 </html>

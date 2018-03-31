@@ -7,6 +7,62 @@ class AddProductComponent extends React.Component {
       show: false,
     };
   }
+  componentDidMount() {
+    // ------------------------------------------------------- //
+    // Adding fade effect to dropdowns
+    // ------------------------------------------------------ //
+    $('.dropdown').on('show.bs.dropdown', function () {
+      $(this).find('.dropdown-menu').first().stop(true, true).fadeIn();
+    });
+    $('.dropdown').on('hide.bs.dropdown', function () {
+      $(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
+    });
+
+    // ------------------------------------------------------- //
+    // Login  form validation
+    // ------------------------------------------------------ //
+    $('#login-form').validate({
+      messages: {
+        loginUsername: 'please enter your username',
+        loginPassword: 'please enter your password'
+      }
+    });
+
+    // ------------------------------------------------------- //
+    // Register form validation
+    // ------------------------------------------------------ //
+    $('#register-form').validate({
+      messages: {
+        registerUsername: 'please enter your first name',
+        registerEmail: 'please enter a valid Email Address',
+        registerPassword: 'please enter your password'
+      }
+    });
+    // ------------------------------------------------------- //
+    // Material Inputs
+    // ------------------------------------------------------ //
+
+    var materialInputs = $('input.input-material');
+
+    // activate labels for prefilled values
+    materialInputs.filter(function () { return $(this).val() !== ""; }).siblings('.label-material').addClass('active');
+
+    // move label on focus
+    materialInputs.on('focus', function () {
+      $(this).siblings('.label-material').addClass('active');
+    });
+
+    // remove/keep label on blur
+    materialInputs.on('blur', function () {
+      $(this).siblings('.label-material').removeClass('active');
+
+      if ($(this).val() !== '') {
+        $(this).siblings('.label-material').addClass('active');
+      } else {
+        $(this).siblings('.label-material').removeClass('active');
+      }
+    });
+  }
   render() {
     var types = Object.keys(this.state.productList.productos),
       MakeType = (type) => { return <option key={type} value={type}>{type}</option>; },
@@ -16,21 +72,21 @@ class AddProductComponent extends React.Component {
       productsKey = Object.keys(this.state.productList.productos[this.state.value]),
         ShowProduct = (p) => { return <option key={p} value={p}>{this.state.productList.productos[this.state.value][p].name}</option> };
       showIngredientes = (i) => {
-        if(this.state.productList.ingredientes[i].type == 'pan'){
-          return (          
+        if (this.state.productList.ingredientes[i].type == 'pan') {
+          return (
             <div class="i-checks">
-              <input id={'radio-'+i} type="radio" key={'ing-'+i} value={'ing-'+i} name="a" class="radio-template" />
-              <label htmlFor={'radio-'+i}>{this.state.productList.ingredientes[i].type} - {this.state.productList.ingredientes[i].name}</label>
+              <input id={'radio-' + i} type="radio" key={'ing-' + i} value={'ing-' + i} name="a" class="radio-template" />
+              <label htmlFor={'radio-' + i}>{this.state.productList.ingredientes[i].type} - {this.state.productList.ingredientes[i].name}</label>
             </div>
           );
         }
-        else 
-        return (          
-          <div class="i-checks">
-            <input id={'check-'+i} type="checkbox" key={'ing-'+i} value={'ing-'+i} class="checkbox-template" />
-            <label htmlFor={'check-'+i}>{this.state.productList.ingredientes[i].type} - {this.state.productList.ingredientes[i].name}</label>
-          </div>
-        );
+        else
+          return (
+            <div class="i-checks">
+              <input id={'check-' + i} type="checkbox" key={'ing-' + i} value={'ing-' + i} class="checkbox-template" />
+              <label htmlFor={'check-' + i}>{this.state.productList.ingredientes[i].type} - {this.state.productList.ingredientes[i].name}</label>
+            </div>
+          );
       }
     }
     return (
