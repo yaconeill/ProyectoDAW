@@ -30,7 +30,7 @@ class NewProductComponent extends React.Component {
         <HeaderComponent/>
         <div className="page-content d-flex align-items-stretch">
           {/* Side Navbar */}
-          <SideNavComponent newProduct="active"/>
+          <SideNavComponent newProduct="active" home="../" path="" />
           <div className="content-inner">
             {/* Page Header */}
             <header className="page-header">

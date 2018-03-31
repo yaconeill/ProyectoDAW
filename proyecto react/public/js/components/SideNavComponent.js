@@ -22,27 +22,27 @@ class SideNavComponent extends React.Component {
         <span className="heading">Principal</span>
         <ul className="list-unstyled">
           <li className={this.props.home}>
-            <a href="index.html">
+            <a href={ this.props.home + 'index.html'}>
               <i className="icon-home"></i>Inicio
             </a>
           </li>
           <li className={this.props.newProduct}>
-            <a href="newProduct.html">
+            <a href={this.props.path + 'newProduct.html'}>
               <i className="fa fa-plus"></i>Nuevo producto
             </a>
           </li>
-          <li className={this.props.active}>
-            <a href="tables.html">
+          <li className={this.props.tables}>
+            <a href={this.props.path + 'tables.html'}>
               <i className="icon-grid"></i>Tablas
             </a>
           </li>
           <li>
-            <a href="charts.html">
+            <a href={this.props.charts + 'charts.html'}>
               <i className="fa fa-bar-chart"></i>Estadísticas
             </a>
           </li>
-          <li>
-            <a href="readQr.html">
+          <li className={this.props.orders}>
+            <a href={this.props.path + 'readQr.html'}>
               <i className="fa fa-bar-chart"></i>Lectura de código
           </a>
           </li>
