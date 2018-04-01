@@ -33,7 +33,7 @@ function loadData() {
 
     //     var xobj = new XMLHttpRequest();
     //     xobj.overrideMimeType("application/json");
-    //     xobj.open('GET', 'js/data.json', true);
+    //     xobj.open('GET', '../js/data.json', true);
     //     xobj.onreadystatechange = function () {
     //         if (xobj.readyState == 4 && xobj.status == "200") {
 

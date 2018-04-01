@@ -1,9 +1,11 @@
 class CameraReaderComponent extends React.Component {
     componentDidMount() {
         $('#scan').click(() => {
+            let widthScreen = window.innerWidth;
+            let width = widthScreen <= 570 ? widthScreen - (widthScreen * 0.2) : 300;
             QRCodeScanner({
                 element: document.getElementById('qrCodeScanner'),
-                width: 400,
+                width: width,
                 height: 300,
                 onScanSuccess: function (result) {
                     // console.log('Scan Success', result);
