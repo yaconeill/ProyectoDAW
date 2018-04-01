@@ -12,7 +12,7 @@ class TableComponent extends React.Component {
             let imgSrc = $(e.relatedTarget).data('img');
             let type = $(e.relatedTarget).data('type');
 
-            $(e.currentTarget).find('#productName').text(`${type} - ${name}`);
+            $(e.currentTarget).find('#productName').text(name);
             if (imgSrc !== '')
                 $(e.currentTarget).find('#img').attr('src', imgSrc);
         });
