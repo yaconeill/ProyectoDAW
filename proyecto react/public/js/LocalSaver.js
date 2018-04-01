@@ -82,3 +82,11 @@ function load(id) {
 		return loadCookie(id);
 	}
 }
+
+function upStringLocalStorage(string, id) {
+	localStorage.setItem(id, string);
+}
+
+function downStringLocalStorage(id) {
+	return localStorage[id];
+}
