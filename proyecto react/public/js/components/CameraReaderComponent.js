@@ -10,6 +10,7 @@ class CameraReaderComponent extends React.Component {
                 onScanSuccess: function (result) {
                     // console.log('Scan Success', result);
                     document.getElementById('message').textContent = result;
+                    upStringLocalStorage(result, "pedidoId");
                     window.location.href = 'resultQr.html';
                 },
                 onScanError: function (error) {
