@@ -3,8 +3,6 @@ class TableComponent extends React.Component {
         super(props);
         this.state = {
             productList: JSON.parse(localStorage.getItem('productos')),
-            value: '?',
-            show: false,
         };
     }
     componentDidMount() {
@@ -20,17 +18,22 @@ class TableComponent extends React.Component {
         });
     }
     render() {
-        var types = Object.keys(this.state.productList.productos).filter(i => i !== 'Bebidas');;
+        var typesProduct = Object.keys(this.state.productList.productos).filter(i => i !== 'Bebidas');
+        var typesDrink = Object.keys(this.state.productList.productos.Bebidas);
         var MakeType = (type, idx) => {
-            return <CardComponent type={type} key={`${type}-${idx}`} productList={this.state.productList} />
-        },
-            productsKey = '', ShowProduct = '', showIngredientes = '',
+            return <CardComponent type={type} key={`${type}-${idx}`} productList={this.state.productList.productos} />
+        };
+        var MakeTypeDrink = (type, idx) => {
+            return <CardComponent type={type} key={`${type}-${idx}`} productList={this.state.productList.productos.Bebidas} />
+        }
+        var productsKey = '', ShowProduct = '', showIngredientes = '',
             ingredientsKey = Object.keys(this.state.productList.ingredientes);
         return (
             <section className="tables">
                 <div className="container-fluid">
                     <div className="row">
-                        {types.map(MakeType)}
+                        {typesProduct.map(MakeType)}
+                        {typesDrink.map(MakeTypeDrink)}
                     </div>
                 </div>
                 {/* <!-- Modal--> */}
@@ -60,38 +63,37 @@ class CardComponent extends React.Component {
         super(props);
     }
     hasIngredient(list, p, idx) {
-        console.log(list);
         if (list)
             return (<IngredientsComponent key={`ingredient-${idx}`}
-                ingredients={this.props.productList.productos[this.props.type][p].ingredients}
+                ingredients={this.props.productList[this.props.type][p].ingredients}
                 productList={this.props.productList} />);
         else return '';
     }
     render() {
-        let productsKeys = Object.keys(this.props.productList.productos[this.props.type]);
+        let productsKeys = Object.keys(this.props.productList[this.props.type]);
         let MakeProduct = (p, idx) => {
             return (
                 <tr key={`row${idx}-${this.props.type}-${new Date().getTime()}`}>
                     <td key={`name-${idx}-${this.props.type}-${new Date().getTime()}`}>
-                        {this.props.productList.productos[this.props.type][p].name}
+                        {this.props.productList[this.props.type][p].name}
                     </td>
                     <td key={`ingr-${idx}-${this.props.type}-${new Date().getTime()}`}>
-                        {this.hasIngredient(this.props.productList.productos[this.props.type][p].ingredients, p, idx)}
+                        {this.hasIngredient(this.props.productList[this.props.type][p].ingredients, p, idx)}
                     </td>
                     <td className="text-center" key={`price-${idx}-${this.props.type}-${new Date().getTime()}`}>
-                        {this.props.productList.productos[this.props.type][p].price}
+                        {this.props.productList[this.props.type][p].price} €
                     </td>
                     <td className="text-center" key={`zoom-${idx}-${this.props.type}-${new Date().getTime()}`}>
                         <button type="button" data-toggle="modal" data-target="#imgZoom" className="btn btn-info btn-sm"
                             data-type={this.props.type}
-                            data-img={this.props.productList.productos[this.props.type][p].img}
-                            data-name={this.props.productList.productos[this.props.type][p].name}>
+                            data-img={this.props.productList[this.props.type][p].img}
+                            data-name={this.props.productList[this.props.type][p].name}>
                             <i className="fa fa-search-plus"></i></button>
                     </td>
                 </tr>)
         }
         return (
-            <div className={this.props.type === 'Frutas' ? 'col-lg-6 order-12' : 'col-lg-6'}>
+            <div className="col-lg-6">
                 <div className="card" key={'card-' + this.props.type}>
                     <div className="card-header d-flex align-items-center">
                         <h3 className="h4">{this.props.type}</h3>
@@ -101,10 +103,10 @@ class CardComponent extends React.Component {
                             <table className="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        {this.props.type === 'Frutas' ? <th rowSpan="2">Nombre</th> : <th>Nombre</th>}
-                                        {this.props.type === 'Frutas' ? <th></th> : <th>Ingredientes</th>}
-                                        <th>Precio</th>
-                                        <th>Imagen</th>
+                                        {this.props.type === 'Frutas' || !this.props.productList.Bebidas ? <th rowSpan="2">Nombre</th> : <th>Nombre</th>}
+                                        {this.props.type === 'Frutas' || !this.props.productList.Bebidas ? <th></th> : <th>Ingredientes</th>}
+                                        <th className="text-center">Precio</th>
+                                        <th className="text-center">Imagen</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -122,15 +124,18 @@ class CardComponent extends React.Component {
 class IngredientsComponent extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            productList: JSON.parse(localStorage.getItem('productos')),
+        };
     }
     render() {
         let MakeIngredient = (ing) => {
-            let type = this.props.productList.ingredientes[ing].type,
-                name = this.props.productList.ingredientes[ing].name;
-            if(type === 'pan')
-            return `${type} ${name} `;
+            let type = this.state.productList.ingredientes[ing].type,
+                name = this.state.productList.ingredientes[ing].name;
+            if (type === 'pan')
+                return `${type} ${name} `;
             else
-            return `${name} `;
+                return `${name} `;
         }
         return (
             <span>{this.props.ingredients.map(MakeIngredient)}</span>
