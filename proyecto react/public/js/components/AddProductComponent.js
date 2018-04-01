@@ -66,11 +66,8 @@ class AddProductComponent extends React.Component {
 	render() {
 		var types = Object.keys(this.state.productList.productos),
 			MakeType = (type) => { return <option key={type} value={type}>{type}</option>; },
-			productsKey = '', ShowProduct = '', showIngredientes = '',
-			ingredientsKey = Object.keys(this.state.productList.ingredientes);
-		if (this.state.value != '?') {
-			productsKey = Object.keys(this.state.productList.productos[this.state.value]),
-				ShowProduct = (p) => { return <option key={p} value={p}>{this.state.productList.productos[this.state.value][p].name}</option> };
+			showIngredientes = '', ingredientsKey = Object.keys(this.state.productList.ingredientes);
+		if (this.state.value != '?' && this.state.value !== 'Bebidas') {
 			showIngredientes = (i) => {
 				if (this.state.productList.ingredientes[i].type == 'pan') {
 					return (
@@ -88,7 +85,8 @@ class AddProductComponent extends React.Component {
 						</div>
 					);
 			}
-		}
+		} else
+			this.state.show = false;
 		return (
 			<section className="forms">
 				<div className="container-fluid">
@@ -131,7 +129,6 @@ class AddProductComponent extends React.Component {
 												</select>
 											</div>
 										</div>
-										{<SelectProduct show={this.state.show} productsKey={productsKey} showProduct={ShowProduct} />}
 										{<ShowIngredients show={this.state.show} ingredientsKey={ingredientsKey} showIngredientes={showIngredientes} />}
 										<div className="form-group row">
 											<label htmlFor="fileInput" className="col-sm-3 form-control-label">Añadir imagen</label>
@@ -153,27 +150,6 @@ class AddProductComponent extends React.Component {
 				</div>
 			</section>
 		);
-	}
-}
-class SelectProduct extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-	render() {
-		if (this.props.show)
-			return (
-				<div className="form-group row">
-					<label className="col-sm-3 form-control-label">Producto</label>
-					<div className="col-sm-9 select">
-						<select name="product" className="form-control">
-							<option>Seleccionar uno ...</option>
-							{this.props.productsKey.map(this.props.showProduct)}
-						</select>
-					</div>
-				</div>
-			);
-		else
-			return '';
 	}
 }
 

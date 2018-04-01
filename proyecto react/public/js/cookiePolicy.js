@@ -1,4 +1,4 @@
-  function getCookie(c_name) {
+  function getCookies(c_name) {
     var c_value = document.cookie;
     var c_start = c_value.indexOf(" " + c_name + "=");
     if (c_start == -1) {
@@ -17,7 +17,7 @@
     return c_value;
   }
 
-  function setCookie(c_name, value, exdays) {
+  function setCookies(c_name, value, exdays) {
     var exdate = new Date();
     exdate.setDate(exdate.getDate() + exdays);
     var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
@@ -25,14 +25,14 @@
   }
 
   function checkCookie() {
-    if (getCookie('tiendaaviso') === "1") {
+    if (getCookies('tiendaaviso') === "1") {
       let accept = document.getElementById('barraAceptacion');
       accept.classList.add('hide');
     }
   }
 
   function PonerCookie() {
-    setCookie('tiendaaviso', '1', 365);
+    setCookies('tiendaaviso', '1', 365);
     let accept = document.getElementById('barraAceptacion');
     accept.classList.add('hide');
   }
