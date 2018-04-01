@@ -78,22 +78,22 @@ class CameraReaderComponent extends React.Component {
                 bottom: 0
             });
 
-            const switchVideoInputButton = c('button', {
-                className: 'switch button',
-                onclick: handleSwitchVideoInputButtonClick
-            });
-            const controlsOverlayElement = c('div', {
-                className: 'controls'
-            }, [
-                    switchVideoInputButton
-                ]);
-            Object.assign(controlsOverlayElement.style, {
-                position: 'absolute',
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0
-            });
+            // const switchVideoInputButton = c('button', {
+            //     className: 'switch button',
+            //     onclick: handleSwitchVideoInputButtonClick
+            // });
+            // const controlsOverlayElement = c('div', {
+            //     className: 'controls'
+            // }, [
+            //         switchVideoInputButton
+            //     ]);
+            // Object.assign(controlsOverlayElement.style, {
+            //     position: 'absolute',
+            //     left: 0,
+            //     right: 0,
+            //     top: 0,
+            //     bottom: 0
+            // });
 
             const videoElement = c('video', {
                 autoplay: true
@@ -107,7 +107,7 @@ class CameraReaderComponent extends React.Component {
                 className: 'video panel'
             }, [
                     videoElement,
-                    controlsOverlayElement
+                    // controlsOverlayElement
                 ]);
             Object.assign(videoPanel.style, {
                 position: 'relative',
@@ -155,9 +155,9 @@ class CameraReaderComponent extends React.Component {
                             .filter(function (device) {
                                 return device.kind === 'videoinput';
                             });
-                        switchVideoInputButton.style.display = availableVideoInputs.length < 2
-                            ? 'none'
-                            : 'block';
+                        // switchVideoInputButton.style.display = availableVideoInputs.length < 2
+                        //     ? 'none'
+                        //     : 'block';
                     });
             }
 
