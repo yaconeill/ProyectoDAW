@@ -64,7 +64,7 @@ class ResultComponent extends React.Component {
                                     return <ItemComponent name={element.name}/>;
                                 })}
                             <div className="form-group">
-                                <input type="submit" value="Confirmar pedido" className="btn btn-primary"/>
+                                <a href="readQr.html" className="btn btn-primary">Confirmar pedido</a>
                             </div>
                         </form>
                     </div>
