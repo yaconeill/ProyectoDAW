@@ -31,9 +31,9 @@ class SideNavComponent extends React.Component {
               <i className="fa fa-plus"></i>Nuevo producto
             </a>
           </li>
-          <li className={this.props.tables}>
-            <a href={this.props.path + 'tables.html'}>
-              <i className="icon-grid"></i>Tablas
+          <li className={this.props.productList}>
+            <a href={this.props.path + 'listaDeProductos.html'}>
+              <i className="icon-grid"></i>Lista de productos
             </a>
           </li>
           <li>
@@ -43,7 +43,7 @@ class SideNavComponent extends React.Component {
           </li>
           <li className={this.props.orders}>
             <a href={this.props.path + 'readQr.html'}>
-              <i className="fa fa-bar-chart"></i>Lectura de código
+              <i className="fa fa-qrcode"></i>Lectura de código
           </a>
           </li>
           <li className={this.props.active}>

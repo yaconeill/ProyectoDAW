@@ -1,4 +1,4 @@
-class NewProductComponent extends React.Component {
+class ProductListComponent extends React.Component {
     componentDidMount() {
         $('#toggle-btn').on('click', function (e) {
             e.preventDefault();
@@ -30,17 +30,17 @@ class NewProductComponent extends React.Component {
                 <HeaderComponent />
                 <div className="page-content d-flex align-items-stretch">
                     {/* Side Navbar */}
-                    <SideNavComponent newProduct="active" home="../" path="" />
+                    <SideNavComponent productList="active" home="../" path="" />
                     <div className="content-inner">
                         {/* Page Header */}
                         <header className="page-header">
                             <div className="container-fluid">
-                                <h2 className="no-margin-bottom">Nuevo producto</h2>
+                                <h2 className="no-margin-bottom">Lista de productos</h2>
                             </div>
                         </header>
                         {/* Content  */}
                         <ContentComponent />
-                        <AddProductComponent />
+                        <TableComponent />
                         {/* Page Footer */}
                         <FooterComponent />
                     </div>
