@@ -36,8 +36,8 @@ class SideNavComponent extends React.Component {
               <i className="icon-grid"></i>Lista de productos
             </a>
           </li>
-          <li>
-            <a href={this.props.charts + 'charts.html'}>
+          <li className={this.props.stats}>
+            <a href={this.props.path + 'stats.html'}>
               <i className="fa fa-bar-chart"></i>Estadísticas
             </a>
           </li>

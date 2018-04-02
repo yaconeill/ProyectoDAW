@@ -1,5 +1,5 @@
 /*global $, document*/
-$(document).ready(function () {
+function createCharts() {
 
     'use strict';
 
@@ -41,10 +41,10 @@ $(document).ready(function () {
             },
         },
         data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"],
             datasets: [
                 {
-                    label: "Data Set One",
+                    label: "2018",
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: gradient1,
@@ -67,7 +67,7 @@ $(document).ready(function () {
                     spanGaps: false
                 },
                 {
-                    label: "Data Set Two",
+                    label: "2017",
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: gradient2,
@@ -166,7 +166,7 @@ $(document).ready(function () {
             }
         },
         data: {
-            labels: ["A", "B", "C", "D", "E", "F", "G"],
+            labels: ["Ene", "Feb", "Mar", "May", "Jun"],
             datasets: [
                 {
                     label: "Total Overdue",
@@ -319,10 +319,10 @@ $(document).ready(function () {
             },
         },
         data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"],
             datasets: [
                 {
-                    label: "Data Set 1",
+                    label: "Bocadillos",
                     backgroundColor: [
                         gradient1,
                         gradient1,
@@ -354,7 +354,7 @@ $(document).ready(function () {
                     data: [65, 59, 80, 81, 56, 55, 40],
                 },
                 {
-                    label: "Data Set 2",
+                    label: "Pulguitas",
                     backgroundColor: [
                         gradient2,
                         gradient2,
@@ -625,4 +625,4 @@ $(document).ready(function () {
 
 
 
-});
+}
