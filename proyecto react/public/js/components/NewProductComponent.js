@@ -27,7 +27,7 @@ class NewProductComponent extends React.Component {
         return (
             <div>
                 {/* Main Navbar */}
-                <HeaderComponent />
+                <HeaderComponent path="../" />
                 <div className="page-content d-flex align-items-stretch">
                     {/* Side Navbar */}
                     <SideNavComponent newProduct="active" home="../" path="" />

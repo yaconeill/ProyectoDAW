@@ -1,4 +1,7 @@
 class HeaderComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <header className="header">
@@ -23,6 +26,7 @@ class HeaderComponent extends React.Component {
                 {/* Navbar Brand  */}
                 <a href="index.html" className="navbar-brand">
                   <div className="brand-text brand-big">
+                    <img src={this.props.path + "img/coffeAppIcon.svg"} width="64"/>
                     <span>CoffeeApp
                     </span>
                     <strong>Dashboard</strong>

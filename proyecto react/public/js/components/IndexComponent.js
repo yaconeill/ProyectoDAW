@@ -27,10 +27,10 @@ class IndexComponent extends React.Component {
     return (
       <div>
         {/* Main Navbar */}
-        <HeaderComponent />
+        <HeaderComponent path="" />
         <div className="page-content d-flex align-items-stretch">
           {/* Side Navbar */}
-          <SideNavComponent  home="" home="" path="pages/"  />
+          <SideNavComponent  home="" home="" path="pages/" />
           <div className="content-inner">
             {/* Page Header */}
             <header className="page-header">
